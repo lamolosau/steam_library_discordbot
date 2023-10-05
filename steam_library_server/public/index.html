@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam API Site</title>
+</head>
+<body>
+    <h1>Steam API Site</h1>
+    <form id="steamForm">
+        <button type="submit">Envoyer une requête à l'API Steam</button>
+    </form>
+    <script>
+        document.getElementById('steamForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            // Envoyez une requête POST à votre serveur Express
+            const response = await fetch('/steam-response', { method: 'POST' });
+            const result = await response.json();
+            console.log(result);
+        });
+    </script>
+</body>
+</html>
